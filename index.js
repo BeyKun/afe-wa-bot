@@ -5,14 +5,18 @@ wa.create().then(client => start(client));
 function start(client) {
   client.onMessage(async message => {
     
+    console.log(message.from)
+    //Ngambil dari custom welcome di DB
     client.sendText(message.from, `
-        Helllo, disini Afedigi!!
-        Ada yang bisa saya bantu?????
+        Hello, disini Afedigi
+        Ada yang bisa aku bantu?
+
+        Chat kamu akan dibalas beberapa saat ya 😊
         
-        - Nindi
+        - April
     `)
 
-
+    //Logic 
     if (message.body === 'Hi') {
       await client.sendText(message.from, '👋 Hello!');
     }

@@ -11,6 +11,8 @@
   "dependencies": {
     "@open-wa/wa-automate": "^3.4.0",
     "fluent-ffmpeg": "^2.1.2",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.15",
     "sharp": "^0.27.1"
   }
 }
