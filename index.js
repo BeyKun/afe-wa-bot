@@ -7,14 +7,15 @@ wa.create().then(client => start(client));
 
 function start(client) {
   client.onMessage(async message => {
+    if(!message.from.includes('@g')){
+        console.log(message.from)
+        //Ngambil dari custom welcome di DB
+        client.sendText(message.from, 'Hai, aku adalah Yuri, assisten dari Tn. Bayu 😊\n\nNampaknya Tn. Bayu sedang sibuk, harap tunggu beberapa saat ya\n\n-Yuri')
     
-    console.log(message.from)
-    //Ngambil dari custom welcome di DB
-    client.sendText(message.from, 'Hai, aku adalah Yuri, assisten dari Tn. Bayu 😊\n\nNampaknya Tn. Bayu sedang sibuk, harap tunggu beberapa saat ya\n\n-Yuri')
-
-    //Logic 
-    if (message.body === 'Hi') {
-      await client.sendText(message.from, '👋 Hello!');
+        //Logic 
+        if (message.body === 'Hi') {
+          await client.sendText(message.from, '👋 Hello!');
+        }
     }
   });
 }
